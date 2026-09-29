@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body {
+            background-color: #f2f2f2;
+            background-image: linear-gradient(to bottom, #ffffff 0%, #e0e0e0 100%);
+            color: #333333;
+            font-family: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .wrapper {
+            width: 900px;
+            background: #ffffff;
+            box-shadow: 0px 5px 15px rgba(0,0,0,0.15);
+            border-left: 1px solid #cccccc;
+            border-right: 1px solid #cccccc;
+            min-height: 700px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .global-nav {
+            background: linear-gradient(to bottom, #4f4f4f 0%, #2c2c2c 50%, #1f1f1f 51%, #000000 100%);
+            height: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-bottom: 2px solid #555555;
+        }
+
+        .nav-tab {
+            background: transparent;
+            color: #ffffff;
+            border: none;
+            padding: 0 20px;
+            height: 100%;
+            font-family: inherit;
+            font-size: 13px;
+            font-weight: bold;
+            cursor: pointer;
+            text-shadow: 0px -1px 0px #000000;
+            transition: background 0.2s;
+        }
+
+        .nav-tab:hover, .nav-tab.active {
+            background: linear-gradient(to bottom, #777777 0%, #444444 50%, #222222 51%, #111111 100%);
+            color: #ffffff;
+            border-left: 1px solid #222;
+            border-right: 1px solid #222;
+        }
+
+        .content-body {
+            padding: 30px;
+            flex-grow: 1;
+        }
+
+        .page-section {
+            display: none;
+        }
+
+        .page-section.active {
+            display: block;
+        }
+
+        .hero-box {
+            text-align: center;
+            background: linear-gradient(to bottom, #ffffff 0%, #f7f7f7 100%);
+            border: 1px solid #dedede;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: inset 0px 1px 0px #ffffff;
+        }
+
+        .hero-box h1 {
+            font-size: 32px;
+            font-weight: normal;
+            color: #111111;
+            margin: 0 0 10px 0;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-box p {
+            font-size: 14px;
+            color: #666666;
+            margin: 0 0 20px 0;
+        }
+
+        .hero-img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #b5b5b5;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card {
+            background: #fafafa;
+            border: 1px solid #dcdcdc;
+            padding: 20px;
+            border-radius: 4px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+            color: #000000;
+            font-size: 16px;
+            border-bottom: 1px solid #eeeeee;
+            padding-bottom: 8px;
+        }
+
+        a {
+            color: #0055cc;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .site-footer {
+            text-align: center;
+            padding: 15px;
+            font-size: 11px;
+            color: #888888;
+            border-top: 1px solid #dedede;
+            background: #f9f9f9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="global-nav">
+        <button class="nav-tab active" onclick="switchPage('home', this)">Home</button>
+        <button class="nav-tab" onclick="switchPage('projects', this)">Projects</button>
+        <button class="nav-tab" onclick="switchPage('gear', this)">Gear & Setup</button>
+        <button class="nav-tab" onclick="switchPage('contact', this)">Contact</button>
+    </div>
+
+    <div class="content-body">
+        
+        <div id="home" class="page-section active">
+            <div class="hero-box">
+                <h1>Notabanneduser / Repoeater.</h1>
+                <p>Sometimes designing, sometimes coding. Always building random things.</p>
+                <img src="YOUR_FEATURED_IMAGE_URL" alt="Featured Project" class="hero-img">
+            </div>
+            <div class="card" style="margin-top: 20px;">
+                <h3>About Me</h3>
+                <p style="font-size: 13px; color: #444; line-height: 1.5;">
+                    Welcome to my personal index. I like working on random side projects and hosting them here. Running Arch Linux daily and keeping things custom. Check out the tabs above to see my setups, Scratch accounts, and repositories.
+                </p>
+            </div>
+        </div>
+
+        <div id="projects" class="page-section">
+            <h2 style="font-weight: normal; color: #333; margin-top: 0;">Projects & Repositories</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Scratch Activity</h3>
+                    <p style="font-size: 13px; color: #555;">
+                        Active builder on Scratch as <a href="https://scratch.mit.edu/users/Notabanneduser/" target="_blank">@Notabanneduser</a>. Making tools, games, and experiments.
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>GitHub Code</h3>
+                    <p style="font-size: 13px; color: #555;">
+                        Hosting various code repositories under <a href="https://github.com/Repoeater" target="_blank">Repoeater</a>. Feel free to browse code and utilities.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div id="gear" class="page-section">
+            <div class="hero-box">
+                <h1>Hardware Freedom.</h1>
+                <p>Rockbox on a 7th Gen iPod. Zero streaming app overhead.</p>
+                <img src="ipod.jpgL" alt="Rockbox iPod" class="hero-img">
+            </div>
+        </div>
+
+        <div id="contact" class="page-section">
+            <div class="card" style="max-width: 500px; margin: 40px auto; text-align: center;">
+                <h3>Get in Touch</h3>
+                <p style="font-size: 13px; color: #555; margin-bottom: 20px;">
+                    Reach out via electronic mail:
+                </p>
+                <p style="font-size: 15px; font-weight: bold; color: #111;">
+                    OracleoftheVirtualBox@proton.me
+                </p>
+                <p style="font-size: 12px; color: #777; margin-top: 20px;">
+                    Discord Handle: @mamasaidnocake
+                </p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="site-footer">
+        Copyright © 2007–2026 Notabanneduser. All rights reserved. Built with pure HTML/CSS.
+    </div>
+</div>
+
+<script>
+    function switchPage(pageId, element) {
+        const sections = document.querySelectorAll('.page-section');
+        sections.forEach(sec => sec.classList.remove('active'));
+        
+        const tabs = document.querySelectorAll('.nav-tab');
+        tabs.forEach(tab => tab.classList.remove('active'));
+        
+        document.getElementById(pageId).classList.add('active');
+        element.classList.add('active');
+    }
+</script>
+
+</body>
+</html>
